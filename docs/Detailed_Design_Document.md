@@ -2,6 +2,23 @@
 # 詳細設計書.md
 
 ## 1. アプリケーションの構成
+### 1.0. フォルダ構造
+
+```scss
+│  index.html
+│  README.md
+│  script.js
+│  styles.css
+│  timerAction.js
+│
+├─docs
+│      Detailed_Design_Document.md
+│      Development_Guide.md
+│
+└─img
+        favicon.ico
+```
+
 
 ### 1.1. HTML構造
 
@@ -23,6 +40,37 @@
   - スタート
   - ストップ
   - リセット
+
+### 1.3. フロー図
+
+```mermaid
+graph TD
+  A[アプリ起動] --> B[ストップウォッチまたはタイマーモード選択]
+  B --> C[ストップウォッチモード]
+  B --> D[タイマーモード]
+  C --> E[STARTボタン]
+  C --> F[STOPボタン]
+  C --> G[RESETボタン]
+  D --> H[時間入力]
+  D --> I[STARTボタン]
+  D --> J[STOPボタン]
+  D --> K[RESETボタン]
+  E --> L[ストップウォッチ実行中]
+  F --> M[ストップウォッチ停止]
+  G --> N[ストップウォッチリセット]
+  I --> O[タイマー実行中]
+  J --> P[タイマー停止]
+  K --> Q[タイマーリセット]
+  H --> R[時間入力完了]
+  L --> F
+  M --> E
+  M --> G
+  O --> J
+  O --> K
+  P --> I
+  P --> K
+
+```
 
 ## 2. 各機能の詳細
 
