@@ -16,7 +16,7 @@ function updateTimeDisplay() {
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
   timeDisplay.textContent = formattedTime;
-  document.title = `ストップウォッチ - ${formattedTime}`;
+  document.title = `${formattedTime}`;
 }
 
 // 1. ストップウォッチ開始
@@ -25,7 +25,7 @@ function StopWatchStart() {
   startTime = Date.now() - elapsedTime;
 
   // タイマーをセット
-  timerinterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     elapsedTime = Date.now() - startTime;
     updateTimeDisplay();
   }, 1000);
@@ -33,13 +33,14 @@ function StopWatchStart() {
 
 // 2. ストップウォッチ終了
 function StopWatchStop() {
-  clearInterval(timerInterval);
+  clearInterval(timeInterval);
 }
 
 // 3. ストップウォッチリセット
 function StopWatchReset() {
   elapsedTime = 0;
   updateTimeDisplay();
+  clearInterval(timeInterval);
 }
 
 // 4. HTMLのstart、stop、resetボタンにそれぞれイベントリスナーを追加
