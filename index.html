@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="Utf-8">
+        <!-- meta要素の中には、content属性に値を設定することで、ビューポートの初期拡大率を設定できる -->
+        <!-- width=device-widthはビューポートの幅をデバイスの幅に合わせることができる-->
+        <!-- Initial-scale=1.0 初期拡大率を1倍に合わせることができる-->        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ストップウォッチ</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="outer-container">
+            <div class="container">
+                <h1 id="time">00:00:00</h1>
+                <button id="start">START</button>
+                <button id="stop">STOP</button>
+                <button id="reset">RESET</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
