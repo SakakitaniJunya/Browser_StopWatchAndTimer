@@ -34,6 +34,7 @@ function StopWatchStart() {
 // 2. ストップウォッチ終了
 function StopWatchStop() {
   clearInterval(timeInterval);
+  console.log("stop test");
 }
 
 // 3. ストップウォッチリセット
